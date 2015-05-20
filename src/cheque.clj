@@ -71,7 +71,7 @@
 
 (defn humanizeWithCurrency [money]
   (def reais (Math/abs (int money)))
-  (def cents (int (* 100 (float (- money reais)))))
+  (def cents (int (* 100 (- (BigDecimal. (str money)) reais))))
 
   (def sinal (cond (< money 0) "menos " :else ""))
 
