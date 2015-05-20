@@ -1,6 +1,7 @@
 (ns cheque)
 
 (def humanizedNumbers {
+  0 "zero",
   1 "um",
   2 "dois",
   3 "tres",
@@ -70,17 +71,21 @@
     :else "" ))
 
 (defn humanizeWithReais [money]
-  (str (humanize money) " reais")
+  (cond
+    (> money 1) (str (humanize money) " reais")
+    :else (str (humanize money) " real")
+    )
   )
 
 (defn humanizeWithCurrency [money]
   (def reais (int money))
   (def cents (int (* 100 (float (- money reais)))))
 
+  (if (< reais 1)
+    (def reais 0))
+
   (cond
     (> cents 0) (str (humanizeWithReais reais) " e " (humanize cents) " centavos")
-    :else (humanizeWithReais money)
-    )
-
-  )
+    :else (humanizeWithReais reais)
+    ))
 
