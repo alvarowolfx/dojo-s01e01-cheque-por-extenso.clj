@@ -66,3 +66,6 @@
   (testing "should return nothing when pass 0"
     (is (= (humanizeWithCurrency 0) ""))))
 
+(deftest chequeUmCentavo
+  (testing "should return um centavo when pass 0.01"
+    (is (= (humanizeWithCurrency 0.01) "um centavo"))))
