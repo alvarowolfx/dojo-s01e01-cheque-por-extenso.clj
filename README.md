@@ -22,5 +22,11 @@ Exemplo:
 
 ### Alguns pré-requisitos
 
-Para este projeto foi utilizado o Intellij com plugin Clojure.
+Para este projeto foi Clojure 1.6.0, Leiningen e desenvolvido utilizando o Intellij com plugin Clojure.
+
+### Como rodar
+
+```shell
+lein test
+```
 
