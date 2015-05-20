@@ -1,4 +1,4 @@
-# Dojo DevMT S01E01 (Versão em Clojure)
+# Dojo DevMT S01E01 (Versão em Clojure) [![Build Status](https://travis-ci.org/alvarowolfx/dojo-s01e01-cheque-por-extenso.clj.svg?branch=master)](https://travis-ci.org/alvarowolfx/dojo-s01e01-cheque-por-extenso.clj)
 #### Versão original desenvolvida em C#. [Disponivel aqui](https://github.com/devmatogrosso/dojo-s01e01-cheque-por-extenso)
 
 ## Data e Local
