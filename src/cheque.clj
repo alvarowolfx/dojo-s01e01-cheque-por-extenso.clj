@@ -41,6 +41,7 @@
 (defn humanize [money])
 
 (defn humanizeDezena [money]
+
   (cond
     (or (<= money 20) (= (mod money 10) 0)) (get humanizedNumbers money)
     (> money 20) (str (humanizeDezena (- money (mod money 10))) " e " (humanizeDezena (mod money 10)))
@@ -60,6 +61,7 @@
       :else "")))
 
 (defn humanize [money]
+
   (def len (alength (to-array (str money))))
   (cond
     (<= len 2) (humanizeDezena money)
@@ -67,7 +69,18 @@
     (>= len 4) (humanizeMilhar money)
     :else "" ))
 
-(defn humanizeWithCurrency [money]
+(defn humanizeWithReais [money]
   (str (humanize money) " reais")
+  )
+
+(defn humanizeWithCurrency [money]
+  (def reais (int money))
+  (def cents (int (* 100 (float (- money reais)))))
+
+  (cond
+    (> cents 0) (str (humanizeWithReais reais) " e " (humanize cents) " centavos")
+    :else (humanizeWithReais money)
+    )
+
   )
 

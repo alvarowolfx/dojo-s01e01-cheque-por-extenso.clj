@@ -43,4 +43,9 @@
     (is (= (humanizeWithCurrency 100) "cem reais"))))
 
 
+(deftest chequeCemReaisDezCentavos
+  (testing "should return cem reais e dez centavos when pass 100.10"
+    (is (= (humanizeWithCurrency 100.10) "cem reais e dez centavos"))))
+
+
 (run-tests)
