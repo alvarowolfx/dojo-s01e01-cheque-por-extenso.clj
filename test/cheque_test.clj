@@ -46,7 +46,6 @@
   (testing "should return cem reais e dez centavos when pass 100.10"
     (is (= (humanizeWithCurrency 100.10) "cem reais e dez centavos"))))
 
-
 (deftest chequeUmReal
   (testing "should return um real when pass 1"
     (is (= (humanizeWithCurrency 1) "um real"))))
@@ -55,9 +54,13 @@
   (testing "should return zero real when pass -100"
     (is (= (humanizeWithCurrency -100) "zero real"))))
 
-(deftest chequeZeroReal
-  (testing "should return zero real when pass 0"
-    (is (= (humanizeWithCurrency 0) "zero real"))))
+(deftest chequeDezReaisCincoCentavos
+  (testing "should return dez reais e cinco centavos when pass 10.05"
+    (is (= (humanizeWithCurrency 10.05) "dez reais e cinco centavos"))))
+
+(deftest chequeZeroRealCincoCentavos
+  (testing "should return zero real e cinco centavos when pass 0.05"
+    (is (= (humanizeWithCurrency 0.05) "zero real e cinco centavos"))))
 
 
 (run-tests)
