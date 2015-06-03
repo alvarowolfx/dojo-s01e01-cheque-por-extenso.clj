@@ -29,4 +29,6 @@ Para este projeto foi Clojure 1.6.0, Leiningen e desenvolvido utilizando o Intel
 ```shell
 lein test
 ```
+### Style Guide
 
+O projeto está seguindo o style guide de clojure [disponível aqui](https://github.com/bbatsov/clojure-style-guide). Dica do [EduardoMRB](https://github.com/EduardoMRB).
